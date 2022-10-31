@@ -16,7 +16,9 @@ struct NsGroupTravelApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            RoutesChoiceView()
+//            GroupsView()
         }
     }
 }
