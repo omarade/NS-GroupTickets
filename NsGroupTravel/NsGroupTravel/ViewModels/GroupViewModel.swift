@@ -13,27 +13,8 @@ class GroupViewModel: ObservableObject {
     @Published var route: Route?
     
     private var db = Firestore.firestore()
-    
-    //    func fetchData(){
-    //        db.collection("groups").addSnapshotListener { (querySnapshot, err) in
-    //            guard let documents = querySnapshot?.documents else {
-    //                print("No Docs")
-    //                return
-    //            }
-    //
-    //            self.groups = documents.map { (queryDocumentSnapshot) -> Group in
-    //                let data = queryDocumentSnapshot.data()
-    //                let id = data["id"] as? String ?? ""
-    //                let departure = data["departure"] as? String ?? ""
-    //                let destination = data["destination"] as? String ?? ""
-    //                let freeSpots = data["free_spots"] as? Int ?? 0
-    //
-    //                return Group(id: id, departure: departure, destination: destination, freeSpots: freeSpots)
-    //            }
-    //        }
-    //    }
-    
-    
+
+    //Get Route by Departure & Destination
     func fetchRouteByPlaces(departure: String, destination: String) {
         let docRef = db.collection("routes").whereField("departure", isEqualTo: departure).whereField("destination", isEqualTo: destination)
         
@@ -45,18 +26,13 @@ class GroupViewModel: ObservableObject {
                 for document in querySnapshot!.documents {
                     let data = document.data()
                     let id = document.documentID
-                    
-                    print(data["groups"])
-                    
+                                    
                     let departure = data["departure"] as? String ?? ""
                     let destination = data["destination"] as? String ?? ""
                     
                     self.fetchGroups(id: id)
                     
                     self.route =  Route(id: id, departure: departure, destination: destination, groups: self.groups)
-                    
-                    print("ROUTE")
-                    print(self.route)
                     
                 }
             }
@@ -75,7 +51,6 @@ class GroupViewModel: ObservableObject {
                 
                 
                 if let data = data {
-                    print(data["groups"])
                     
                     let departure = data["departure"] as? String ?? ""
                     let destination = data["destination"] as? String ?? ""
@@ -84,8 +59,6 @@ class GroupViewModel: ObservableObject {
                     
                     self.route =  Route(id: id, departure: departure, destination: destination, groups: self.groups)
                     
-                    print("ROUTE")
-                    print(self.route)
                 }
                 
             } else {
