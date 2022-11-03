@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0740AB672912F0CC0000BC79 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB662912F0CC0000BC79 /* LandingView.swift */; };
+		0740AB692912F4390000BC79 /* GroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB682912F4390000BC79 /* GroupDetailView.swift */; };
+		0740AB6B291349930000BC79 /* GroupDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB6A291349930000BC79 /* GroupDetailsViewModel.swift */; };
 		07A8A80D2909AA5D0011638F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A80C2909AA5D0011638F /* User.swift */; };
 		07A8A80F2909AA800011638F /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A80E2909AA800011638F /* Group.swift */; };
 		07A8A8112909AA990011638F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8102909AA990011638F /* Route.swift */; };
 		07A8A8152909BCA50011638F /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8142909BCA50011638F /* Member.swift */; };
 		07A8A8202909C3EC0011638F /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A81F2909C3EC0011638F /* GroupsView.swift */; };
 		07A8A8222909DD130011638F /* GroupCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8212909DD130011638F /* GroupCardView.swift */; };
-		07A8A8252909E9670011638F /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8242909E9670011638F /* GroupViewModel.swift */; };
+		07A8A8252909E9670011638F /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8242909E9670011638F /* GroupsViewModel.swift */; };
 		07A8A827290DDB8F0011638F /* RoutesChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A826290DDB8F0011638F /* RoutesChoiceView.swift */; };
 		07A8A82B290F12910011638F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A82A290F12910011638F /* ColorExtension.swift */; };
 		07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */; };
@@ -25,13 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0740AB662912F0CC0000BC79 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		0740AB682912F4390000BC79 /* GroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailView.swift; sourceTree = "<group>"; };
+		0740AB6A291349930000BC79 /* GroupDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewModel.swift; sourceTree = "<group>"; };
 		07A8A80C2909AA5D0011638F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07A8A80E2909AA800011638F /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		07A8A8102909AA990011638F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		07A8A8142909BCA50011638F /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		07A8A81F2909C3EC0011638F /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		07A8A8212909DD130011638F /* GroupCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCardView.swift; sourceTree = "<group>"; };
-		07A8A8242909E9670011638F /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		07A8A8242909E9670011638F /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		07A8A826290DDB8F0011638F /* RoutesChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesChoiceView.swift; sourceTree = "<group>"; };
 		07A8A82A290F12910011638F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		07E62D6F29046B3000D18E11 /* NsGroupTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NsGroupTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,8 @@
 				07A8A81F2909C3EC0011638F /* GroupsView.swift */,
 				07A8A8212909DD130011638F /* GroupCardView.swift */,
 				07A8A826290DDB8F0011638F /* RoutesChoiceView.swift */,
+				0740AB662912F0CC0000BC79 /* LandingView.swift */,
+				0740AB682912F4390000BC79 /* GroupDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -78,7 +86,8 @@
 		07A8A8232909E92F0011638F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				07A8A8242909E9670011638F /* GroupViewModel.swift */,
+				07A8A8242909E9670011638F /* GroupsViewModel.swift */,
+				0740AB6A291349930000BC79 /* GroupDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -216,16 +225,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0740AB672912F0CC0000BC79 /* LandingView.swift in Sources */,
 				07E62D7529046B3000D18E11 /* ContentView.swift in Sources */,
 				07A8A8202909C3EC0011638F /* GroupsView.swift in Sources */,
+				0740AB6B291349930000BC79 /* GroupDetailsViewModel.swift in Sources */,
 				07A8A82B290F12910011638F /* ColorExtension.swift in Sources */,
 				07A8A8222909DD130011638F /* GroupCardView.swift in Sources */,
-				07A8A8252909E9670011638F /* GroupViewModel.swift in Sources */,
+				07A8A8252909E9670011638F /* GroupsViewModel.swift in Sources */,
 				07A8A8152909BCA50011638F /* Member.swift in Sources */,
 				07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */,
 				07A8A80D2909AA5D0011638F /* User.swift in Sources */,
 				07A8A8112909AA990011638F /* Route.swift in Sources */,
 				07A8A80F2909AA800011638F /* Group.swift in Sources */,
+				0740AB692912F4390000BC79 /* GroupDetailView.swift in Sources */,
 				07A8A827290DDB8F0011638F /* RoutesChoiceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

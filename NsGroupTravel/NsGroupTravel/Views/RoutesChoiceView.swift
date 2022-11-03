@@ -12,15 +12,13 @@ struct RoutesChoiceView: View {
     @State private var selectedDeparture = "Amsterdam Central"
     @State private var selectedDestination = "Eindhoven Central"
     
-    @State private var btnClicked = false
+    @State private var searchBtnClicked = false
     
     //Routes Options
     var places = ["Amsterdam Central", "Rotterdam Central", "Eindhoven Central", "Maastricht Central", "Den Haag Central", "Utrecht Central"]
     
     
     var body: some View {
-        
-        NavigationView {
             Form {
                 Section() {
                     
@@ -43,20 +41,20 @@ struct RoutesChoiceView: View {
                     .padding(.top, 15)
                     
                     //Search Groups Btn
-                    Button(action: {self.btnClicked.toggle()}) {
+                    Button(action: {self.searchBtnClicked.toggle()}) {
                         HStack{
                             Label("Search For Group", systemImage: "magnifyingglass")
                                 .frame(minWidth: 100, maxWidth: .infinity, minHeight: 44, maxHeight: 44, alignment: .center)
                         }
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(UIColor(named: "btn")!))
+                    .background(Color(UIColor(named: "blueGreen")!))
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .cornerRadius(10)
                     
                     //Navigate to GroupsView on Btn Click
-                    NavigationLink(destination: GroupsView(departure: selectedDeparture, destination: selectedDestination), isActive: $btnClicked){
+                    NavigationLink(destination: GroupsView(departure: selectedDeparture, destination: selectedDestination), isActive: $searchBtnClicked){
                         
                     }
                     .frame(maxWidth: 0, maxHeight: 0)
@@ -70,12 +68,17 @@ struct RoutesChoiceView: View {
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Pick a Route")
+            .navigationBarTitleDisplayMode(.large)
+
+            
         }
-    }
+    
 }
 
 struct RoutesChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutesChoiceView()
+        NavigationView {
+            RoutesChoiceView()
+        }
     }
 }
