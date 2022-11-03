@@ -13,6 +13,10 @@
 		07E62D7A29046B3100D18E11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D7929046B3100D18E11 /* Preview Assets.xcassets */; };
 		07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 07E62D812904740600D18E11 /* FirebaseFirestore */; };
 		07E62D842904748100D18E11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D832904748000D18E11 /* GoogleService-Info.plist */; };
+		864F112E2912C04D003D8AF2 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F112D2912C04D003D8AF2 /* GroupView.swift */; };
+		86BD9631290ED5DB00ACD88E /* CreateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9630290ED5DB00ACD88E /* CreateGroup.swift */; };
+		86BD9633290ED5E900ACD88E /* GroupConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9632290ED5E900ACD88E /* GroupConfirm.swift */; };
+		86BD9637290EE9CE00ACD88E /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9636290EE9CE00ACD88E /* TripsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		07E62D7629046B3100D18E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07E62D7929046B3100D18E11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		07E62D832904748000D18E11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		864F112D2912C04D003D8AF2 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		86BD9630290ED5DB00ACD88E /* CreateGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroup.swift; sourceTree = "<group>"; };
+		86BD9632290ED5E900ACD88E /* GroupConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupConfirm.swift; sourceTree = "<group>"; };
+		86BD9636290EE9CE00ACD88E /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 			children = (
 				07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */,
 				07E62D7429046B3000D18E11 /* ContentView.swift */,
+				86BD9630290ED5DB00ACD88E /* CreateGroup.swift */,
+				86BD9632290ED5E900ACD88E /* GroupConfirm.swift */,
+				86BD9636290EE9CE00ACD88E /* TripsView.swift */,
+				864F112D2912C04D003D8AF2 /* GroupView.swift */,
 				07E62D7629046B3100D18E11 /* Assets.xcassets */,
 				07E62D832904748000D18E11 /* GoogleService-Info.plist */,
 				07E62D7829046B3100D18E11 /* Preview Content */,
@@ -149,7 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BD9637290EE9CE00ACD88E /* TripsView.swift in Sources */,
+				86BD9633290ED5E900ACD88E /* GroupConfirm.swift in Sources */,
+				864F112E2912C04D003D8AF2 /* GroupView.swift in Sources */,
 				07E62D7529046B3000D18E11 /* ContentView.swift in Sources */,
+				86BD9631290ED5DB00ACD88E /* CreateGroup.swift in Sources */,
 				07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
