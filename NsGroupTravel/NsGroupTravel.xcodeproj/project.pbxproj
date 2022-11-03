@@ -17,6 +17,7 @@
 		86BD9631290ED5DB00ACD88E /* CreateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9630290ED5DB00ACD88E /* CreateGroup.swift */; };
 		86BD9633290ED5E900ACD88E /* GroupConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9632290ED5E900ACD88E /* GroupConfirm.swift */; };
 		86BD9637290EE9CE00ACD88E /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9636290EE9CE00ACD88E /* TripsView.swift */; };
+		86E47AA92914617400DBFD31 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 86E47AA82914617400DBFD31 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86E47AA92914617400DBFD31 /* SwiftyJSON in Frameworks */,
 				07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +104,7 @@
 			name = NsGroupTravel;
 			packageProductDependencies = (
 				07E62D812904740600D18E11 /* FirebaseFirestore */,
+				86E47AA82914617400DBFD31 /* SwiftyJSON */,
 			);
 			productName = NsGroupTravel;
 			productReference = 07E62D6F29046B3000D18E11 /* NsGroupTravel.app */;
@@ -133,6 +136,7 @@
 			mainGroup = 07E62D6629046B3000D18E11;
 			packageReferences = (
 				07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				86E47AA72914617400DBFD31 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 07E62D7029046B3000D18E11 /* Products */;
 			projectDirPath = "";
@@ -375,6 +379,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		86E47AA72914617400DBFD31 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -382,6 +394,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		86E47AA82914617400DBFD31 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86E47AA72914617400DBFD31 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftyJSON
 
 struct CreateGroup: View {
     
@@ -18,6 +19,8 @@ struct CreateGroup: View {
         City(name: "The Hague", uicCode: ""),
         City(name: "Utrecht", uicCode: ""),
     ]
+    
+    @State var availableTimes=[String]()
     
     
     var destinationsReturned = [String]()
@@ -35,7 +38,7 @@ struct CreateGroup: View {
     @State private var selectedCityT = 1
     
     @State private var isExpandedDummy = false
-    @State private var selectedDestination = "Eindhoven"
+    @State private var selectedDestination = "Rotterdam"
     
     
     private struct City: Identifiable, Codable {
@@ -44,12 +47,22 @@ struct CreateGroup: View {
         var uicCode: String
     }
     
-    
-    func fetchAPI(originUicCode: String, destinationUicCode: String) -> Array<String>{
-        var temp = [String]()
-        print("intra aici")
-        let nsAPI: String =    "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?uicCode=\(originUicCode)"
+    let dateFormatter = DateFormatter()
+
+    func upd(){
         
+    }
+    
+    func fetchAPI(fromStation: String, toStation: String, date: Date) -> Array<String>{
+        var temp = [String]()
+        temp.append("tst")
+        print("intra aici")
+        print(fromStation)
+        print(toStation)
+        print(date)
+        dateFormatter.dateFormat="yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        let nsAPI: String =    "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?fromStation=\(fromStation)&toStation=\(toStation)&dateTime=\(dateFormatter.string(from: date))"
+        print(nsAPI)
         let session = URLSession.shared
         let url = URL(string: nsAPI)!
         var request = URLRequest(url: url)
@@ -68,21 +81,32 @@ struct CreateGroup: View {
                 if response?.statusCode == 200 {
                     DispatchQueue.main.async {
                         do {
-                            let jsonObject = try JSONSerialization.jsonObject(with: data)
+                            let jsonObject = JSON(data)
+                            
+                            availableTimes.removeAll()
+                            for (index,subJson):(String, JSON) in jsonObject["trips"] {
+                                
+                                availableTimes.append(subJson["uid"].stringValue)
+                            }
+                            print(availableTimes)
+                            
+                            
+                            
                             
                             if let arr = jsonObject as? [String: Any] {
-                                if case let results as NSDictionary = arr["payload"] {
+                               
+                                if case let results as NSDictionary = arr["trips"] {
                                     for (key, value) in results {
+                                        print(key)
                                         if key as! String == "departures"{
                                             if case let val as NSArray = value {
                                                 for i in val {
                                                     if case let dest as NSDictionary = i {
                                                         for (keyDest, valueDest) in dest {
                                                             if keyDest as! String == "direction" {
-                                                                if valueDest as! String == destinationUicCode {
+                                                                if valueDest as! String == toStation {
                                                                     let time = dest["plannedDateTime"] as! String
                                                                    print(time)
-    
                                                                 }
                                                             }
                                                         }
@@ -97,6 +121,7 @@ struct CreateGroup: View {
                                 } else {
                                     print("n-a mers")
                                 }
+                                print (times)
                                 DispatchQueue.main.async {
 //                                    let departures = arr["departures"] as! Any
 //                                    print(departures)
@@ -111,10 +136,10 @@ struct CreateGroup: View {
                 }
                 
             }
-            temp = destFunc
         }
             
             dataTask.resume()
+        dataTask.response
         return temp
 
         }
@@ -169,7 +194,7 @@ struct CreateGroup: View {
                                         .padding(.all)
                                         .onTapGesture {
                                             self.selectedDeparture = Cities[num].name
-                                            print(self.fetchAPI(originUicCode: "8400206", destinationUicCode: "Deurne"))
+                                            print(self.fetchAPI(fromStation: selectedDeparture, toStation: selectedDestination, date: Date()))
                                             withAnimation {
                                                 self.isExpanded.toggle()
                                             }
@@ -201,6 +226,10 @@ struct CreateGroup: View {
                                             self.selectedCityA = Cities[num].name
                                             withAnimation {
                                                 self.isExpandedA.toggle()
+                                            }
+//                                            self.fetchAPI(originUicCode: "8400206", destinationUicCode: "Deurne"))
+                                            withAnimation {
+                                                self.isExpanded.toggle()
                                             }
                                         }
                                 }
@@ -249,14 +278,14 @@ struct CreateGroup: View {
                         
                         DisclosureGroup("\(selectedCityT)", isExpanded: $isExpandedT) {
                             VStack(alignment: .center) {
-                                
-                                ForEach(1...5, id: \.self) { num in
-                                    Text("\(num)")
+                               
+                                ForEach(availableTimes, id: \.self) { time in
+                                    Text("\(time.components(separatedBy: "|")[3].components(separatedBy: "=")[1].components(separatedBy: "T")[1].components(separatedBy: "+")[0])")
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .font(.title3)
                                         .padding(.all)
-                                        .onTapGesture {
-                                            self.selectedCityT = num
+                                        .onTapGesture { print(availableTimes)
+                                            self.selectedCityT = 5
                                             withAnimation {
                                                 self.isExpandedT.toggle()
                                             }
