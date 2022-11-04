@@ -22,8 +22,8 @@
 		07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */; };
 		07E62D7729046B3100D18E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D7629046B3100D18E11 /* Assets.xcassets */; };
 		07E62D7A29046B3100D18E11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D7929046B3100D18E11 /* Preview Assets.xcassets */; };
-		07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 07E62D812904740600D18E11 /* FirebaseFirestore */; };
 		07E62D842904748100D18E11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D832904748000D18E11 /* GoogleService-Info.plist */; };
+		07E740952914D5C80019A148 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 07E740942914D5C80019A148 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */,
+				07E740952914D5C80019A148 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			);
 			name = NsGroupTravel;
 			packageProductDependencies = (
-				07E62D812904740600D18E11 /* FirebaseFirestore */,
+				07E740942914D5C80019A148 /* FirebaseFirestore */,
 			);
 			productName = NsGroupTravel;
 			productReference = 07E62D6F29046B3000D18E11 /* NsGroupTravel.app */;
@@ -193,7 +193,7 @@
 			);
 			mainGroup = 07E62D6629046B3000D18E11;
 			packageReferences = (
-				07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				07E740932914D5C80019A148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 07E62D7029046B3000D18E11 /* Products */;
 			projectDirPath = "";
@@ -435,20 +435,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		07E740932914D5C80019A148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		07E62D812904740600D18E11 /* FirebaseFirestore */ = {
+		07E740942914D5C80019A148 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 07E740932914D5C80019A148 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
