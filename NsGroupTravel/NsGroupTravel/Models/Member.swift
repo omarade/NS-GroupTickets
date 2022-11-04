@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct Member: Codable {
+struct Member: Codable, Identifiable {
     var id, name, email, phoneNr: String
+    var ticktesNr: Int
+    var creator: Bool
 }

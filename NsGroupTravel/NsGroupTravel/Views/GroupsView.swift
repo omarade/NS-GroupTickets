@@ -8,58 +8,63 @@
 import SwiftUI
 
 struct GroupsView: View {
+    @State private var date = Date()
+    @State private var ticketsNr = 1
     
     //view model database layer
-    @ObservedObject private var groupViewModel = GroupViewModel()
+    @ObservedObject private var groupsViewModel = GroupsViewModel()
     
     //Fetch Data On Init
     init(departure: String, destination: String) {
         //get routes
-        self.groupViewModel.fetchRouteByPlaces(departure: departure, destination: destination)
+        self.groupsViewModel.fetchRouteByPlaces(departure: departure, destination: destination)
     }
     
     var body: some View {
         
-        NavigationView {
-            Form {
-                Section {
-                    //Show Selected Route
-                    VStack {
-                        Text("\(self.groupViewModel.route?.departure ?? "")")
-                            .padding(4)
-                        Label("", systemImage: "arrow.right")
-                        Text("\(self.groupViewModel.route?.destination ?? "")")
-                            .padding(4)
-                        
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 150)
-                }
-                
-                //Show List of Found Groups
-                Section {
-                    List  {
-                        
-                        ForEach(groupViewModel.groups) { group in
-                            NavigationLink (destination: GroupCardView(group: group)) {
-                                GroupCardView(group: group)
-                                    .frame(maxWidth: .infinity, maxHeight: 100)
-                                    
-                            }
-                            .listRowInsets(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 10))
-                            
-                        }
-
-                    }
+        Form {
+            Section (header: Text("Selected Route")) {
+                //Show Selected Route
+                HStack {
+                    Text("\(self.groupsViewModel.route?.departure ?? "")")
+                        .padding(.trailing, 2)
+                    Label("", systemImage: "arrow.right")
+                    Text("\(self.groupsViewModel.route?.destination ?? "")")
+                        .padding(.leading, 2)
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: 150)
-                
-                
+                .font(.system(size: 13))
+            }
+            
+            //Filter groups
+            Section(header: Text("Filter")) {
+                DatePicker(
+                        "Date",
+                        selection: $date,
+                        displayedComponents: [.date]
+                )
+                Stepper("Availabel Tickets: \(ticketsNr)", value: $ticketsNr, in: 1...6)
             }
             
             
+            //Show List of Found Groups
+            Section(header: Text("Groups Found").frame(alignment: .leading)) {
+                List  {
+                    
+                    ForEach(groupsViewModel.groups) { group in
+                        NavigationLink (destination: GroupDetailView(id: group.id)) {
+                            GroupCardView(group: group)
+                                .frame(maxWidth: .infinity, maxHeight: 100)
+                                
+                        }
+                        .listRowInsets(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 10))
+                    }
+                }
+            }
         }
         .navigationTitle("Groups")
+        .navigationBarTitleDisplayMode(.large)
         .toolbar {
             Button(action: {}) {
                 Image(systemName: "plus")
@@ -71,6 +76,8 @@ struct GroupsView: View {
 
 struct GroupsView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView {
             GroupsView(departure: "Amesterdam Central", destination: "Eindhoven Central")
+        }
     }
 }

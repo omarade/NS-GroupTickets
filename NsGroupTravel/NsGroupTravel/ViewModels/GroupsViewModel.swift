@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-class GroupViewModel: ObservableObject {
+class GroupsViewModel: ObservableObject {
     @Published var groups = [Group]()
     @Published var route: Route?
     
