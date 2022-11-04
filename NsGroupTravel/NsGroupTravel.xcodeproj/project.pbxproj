@@ -24,11 +24,6 @@
 		07E62D7A29046B3100D18E11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D7929046B3100D18E11 /* Preview Assets.xcassets */; };
 		07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 07E62D812904740600D18E11 /* FirebaseFirestore */; };
 		07E62D842904748100D18E11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D832904748000D18E11 /* GoogleService-Info.plist */; };
-		864F112E2912C04D003D8AF2 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864F112D2912C04D003D8AF2 /* GroupView.swift */; };
-		86BD9631290ED5DB00ACD88E /* CreateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9630290ED5DB00ACD88E /* CreateGroup.swift */; };
-		86BD9633290ED5E900ACD88E /* GroupConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9632290ED5E900ACD88E /* GroupConfirm.swift */; };
-		86BD9637290EE9CE00ACD88E /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD9636290EE9CE00ACD88E /* TripsView.swift */; };
-		86E47AA92914617400DBFD31 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 86E47AA82914617400DBFD31 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +44,6 @@
 		07E62D7629046B3100D18E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07E62D7929046B3100D18E11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		07E62D832904748000D18E11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		864F112D2912C04D003D8AF2 /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
-		86BD9630290ED5DB00ACD88E /* CreateGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroup.swift; sourceTree = "<group>"; };
-		86BD9632290ED5E900ACD88E /* GroupConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupConfirm.swift; sourceTree = "<group>"; };
-		86BD9636290EE9CE00ACD88E /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86E47AA92914617400DBFD31 /* SwiftyJSON in Frameworks */,
 				07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,11 +130,6 @@
 				07A8A8122909AE360011638F /* Views */,
 				07A8A80B2909AA190011638F /* Models */,
 				07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */,
-				07E62D7429046B3000D18E11 /* ContentView.swift */,
-				86BD9630290ED5DB00ACD88E /* CreateGroup.swift */,
-				86BD9632290ED5E900ACD88E /* GroupConfirm.swift */,
-				86BD9636290EE9CE00ACD88E /* TripsView.swift */,
-				864F112D2912C04D003D8AF2 /* GroupView.swift */,
 				07E62D7629046B3100D18E11 /* Assets.xcassets */,
 				07E62D832904748000D18E11 /* GoogleService-Info.plist */,
 				07E62D7829046B3100D18E11 /* Preview Content */,
@@ -178,7 +163,6 @@
 			name = NsGroupTravel;
 			packageProductDependencies = (
 				07E62D812904740600D18E11 /* FirebaseFirestore */,
-				86E47AA82914617400DBFD31 /* SwiftyJSON */,
 			);
 			productName = NsGroupTravel;
 			productReference = 07E62D6F29046B3000D18E11 /* NsGroupTravel.app */;
@@ -210,7 +194,6 @@
 			mainGroup = 07E62D6629046B3000D18E11;
 			packageReferences = (
 				07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				86E47AA72914617400DBFD31 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 07E62D7029046B3000D18E11 /* Products */;
 			projectDirPath = "";
@@ -247,11 +230,6 @@
 				07A8A8222909DD130011638F /* GroupCardView.swift in Sources */,
 				07A8A8252909E9670011638F /* GroupsViewModel.swift in Sources */,
 				07A8A8152909BCA50011638F /* Member.swift in Sources */,
-				86BD9637290EE9CE00ACD88E /* TripsView.swift in Sources */,
-				86BD9633290ED5E900ACD88E /* GroupConfirm.swift in Sources */,
-				864F112E2912C04D003D8AF2 /* GroupView.swift in Sources */,
-				07E62D7529046B3000D18E11 /* ContentView.swift in Sources */,
-				86BD9631290ED5DB00ACD88E /* CreateGroup.swift in Sources */,
 				07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */,
 				07A8A8112909AA990011638F /* Route.swift in Sources */,
 				07A8A80F2909AA800011638F /* Group.swift in Sources */,
@@ -465,14 +443,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		86E47AA72914617400DBFD31 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -480,11 +450,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 07E62D802904740600D18E11 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
-		};
-		86E47AA82914617400DBFD31 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 86E47AA72914617400DBFD31 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
