@@ -12,35 +12,43 @@ struct GroupConfirm: View {
         
         VStack(alignment: .center){
             
-            Text("Create new group")
+            Text("Congratulations!")
                 .frame(maxWidth: .infinity)
                 .font(.largeTitle)
                 .padding(.top, 20)
             
-            Text("You have joined a new group.")
+            Text("You have created a new group.")
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top, 3)
-            Text("You can view find more details below.")
+                .padding(.top)
+                .offset(y: -20)
+                .font(.title3)
+            
+            Text("You can find more details below.")
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top, -5)
+                .padding(.top)
+                .offset(y: -25)
+                
             
             Image(systemName: "checkmark.seal")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .padding(.top, 200)
+                .padding(.top)
+                .offset(y:100)
                 .opacity(0.3)
             
             NavigationLink(destination: TripsView(), label: {
                 Text("My Trips")
-                    .padding(.top, 150)
+                    .padding(.top)
                     .font(.title2)
+                    .offset(y: 250)
             })
             
             NavigationLink(destination: CreateGroup(), label: {
                 Text("View group details")
                     .padding(.top, 5)
                     .font(.title2)
+                    .offset(y: 250)
             })
             
             Spacer()

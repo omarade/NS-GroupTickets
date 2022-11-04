@@ -10,7 +10,6 @@ import SwiftyJSON
 
 struct CreateGroup: View {
     
-    
     private let Cities: [City] = [
         City(name: "Amsterdam", uicCode: ""),
         City(name: "Eindhoven", uicCode: "8400196"),
@@ -20,22 +19,31 @@ struct CreateGroup: View {
         City(name: "Utrecht", uicCode: ""),
     ]
     
+    private let Dates: [Day] = [
+        Day(name: "04.11.2022"),
+        Day(name: "05.11.2022"),
+        Day(name: "06.11.2022"),
+        Day(name: "07.11.2022"),
+        Day(name: "08.11.2022"),
+    ]
+    
+    
     @State var availableTimes=[String]()
     
     
     var destinationsReturned = [String]()
     
     @State private var isExpanded = false
-    @State private var selectedDeparture = "Eindhoven"
+    @State private var selectedDeparture = "Select Departure"
     
     @State private var isExpandedA = false
-    @State private var selectedCityA = "Rotterdam"
+    @State private var selectedCityA = "Select Arrival"
     
     @State private var isExpandedD = false
-    @State private var selectedCityD = 1
+    @State private var selectedCityD = "Today"
     
     @State private var isExpandedT = false
-    @State private var selectedCityT = 1
+    @State private var selectedCityT = "Select Time"
     
     @State private var isExpandedDummy = false
     @State private var selectedDestination = "Rotterdam"
@@ -45,6 +53,11 @@ struct CreateGroup: View {
         let name: String
         var id: String {name}
         var uicCode: String
+    }
+    
+    private struct Day: Identifiable, Codable {
+        let name: String
+        var id: String {name}
     }
     
     let dateFormatter = DateFormatter()
@@ -175,7 +188,7 @@ struct CreateGroup: View {
                             .font(.largeTitle)
                             .padding(.top, 20)
                         
-                        Text("Select departure").font(.title3)
+                        Text("Departure").font(.title3)
                             .padding(.top, 50)
                             .padding(.leading)
                         //                    DisclosureGroup("Select departure", isExpanded: $isExpanded) {
@@ -194,7 +207,7 @@ struct CreateGroup: View {
                                         .padding(.all)
                                         .onTapGesture {
                                             self.selectedDeparture = Cities[num].name
-                                            print(self.fetchAPI(fromStation: selectedDeparture, toStation: selectedDestination, date: Date()))
+                                            
                                             withAnimation {
                                                 self.isExpanded.toggle()
                                             }
@@ -210,7 +223,7 @@ struct CreateGroup: View {
                         .background(Color.gray)
                         .cornerRadius(30)
                         
-                        Text("Select arrival").font(.title3)
+                        Text("Arrival").font(.title3)
                             .padding(.top)
                             .padding(.leading)
                         
@@ -224,12 +237,9 @@ struct CreateGroup: View {
                                         .padding(.all)
                                         .onTapGesture {
                                             self.selectedCityA = Cities[num].name
+                                            print(self.fetchAPI(fromStation: selectedDeparture, toStation: selectedDestination, date: Date()))
                                             withAnimation {
                                                 self.isExpandedA.toggle()
-                                            }
-//                                            self.fetchAPI(originUicCode: "8400206", destinationUicCode: "Deurne"))
-                                            withAnimation {
-                                                self.isExpanded.toggle()
                                             }
                                         }
                                 }
@@ -243,7 +253,7 @@ struct CreateGroup: View {
                         .background(Color.gray)
                         .cornerRadius(30)
                         
-                        Text("Select Date").font(.title3)
+                        Text("Date").font(.title3)
                             .padding(.top)
                             .padding(.leading)
                         
@@ -251,12 +261,13 @@ struct CreateGroup: View {
                             VStack(alignment: .center) {
                                 
                                 ForEach(1...5, id: \.self) { num in
-                                    Text("\(num)")
+                                    Text("\(Dates[num].name)")
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .font(.title3)
                                         .padding(.all)
                                         .onTapGesture {
-                                            self.selectedCityD = num
+                                            
+                                            self.selectedCityD = Dates[num].name
                                             withAnimation {
                                                 self.isExpandedD.toggle()
                                             }
@@ -272,7 +283,7 @@ struct CreateGroup: View {
                         .background(Color.gray)
                         .cornerRadius(30)
                         
-                        Text("Select time").font(.title3)
+                        Text("Time").font(.title3)
                             .padding(.top)
                             .padding(.leading)
                         
@@ -285,7 +296,7 @@ struct CreateGroup: View {
                                         .font(.title3)
                                         .padding(.all)
                                         .onTapGesture { print(availableTimes)
-                                            self.selectedCityT = 5
+                                            self.selectedCityT = ("\(time.components(separatedBy: "|")[3].components(separatedBy: "=")[1].components(separatedBy: "T")[1].components(separatedBy: "+")[0])")
                                             withAnimation {
                                                 self.isExpandedT.toggle()
                                             }

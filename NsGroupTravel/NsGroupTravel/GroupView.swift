@@ -19,8 +19,9 @@ struct GroupView: View {
             Image(systemName: "train.side.front.car")
                 .resizable()
                 .frame(width: 60, height: 35)
-                .offset(y:-45)
-                
+                .offset(y:-46)
+                .offset(x:3)
+                .foregroundStyle(Color.white)
             
             Spacer()
         }
