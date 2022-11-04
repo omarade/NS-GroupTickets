@@ -10,51 +10,53 @@ import SwiftUI
 struct GroupConfirm: View {
     var body: some View {
         
-        VStack(alignment: .center){
-            
-            Text("Congratulations!")
-                .frame(maxWidth: .infinity)
-                .font(.largeTitle)
-                .padding(.top, 20)
-            
-            Text("You have created a new group.")
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top)
-                .offset(y: -20)
-                .font(.title3)
-            
-            Text("You can find more details below.")
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top)
-                .offset(y: -25)
+            VStack(alignment: .center){
                 
-            
-            Image(systemName: "checkmark.seal")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .padding(.top)
-                .offset(y:100)
-                .opacity(0.3)
-            
-            NavigationLink(destination: TripsView(), label: {
-                Text("My Trips")
+                Text("Congratulations!")
+                    .frame(maxWidth: .infinity)
+                    .font(.largeTitle)
+                    .padding(.top, 20)
+                
+                Text("You have created a new group.")
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.top)
-                    .font(.title2)
-                    .offset(y: 250)
-            })
+                    .offset(y: -25)
+                    .font(.title3)
+                
+                Text("You can find more details below.")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top)
+                    .offset(y: -50)
+                
+                
+                Image(systemName: "checkmark.seal")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .padding(.top)
+                    .offset(y:100)
+                    .opacity(0.3)
+                
+                NavigationLink(destination: TripsView(), label: {
+                    Text("My Trips")
+                        .padding(.top, 250)
+                        .font(.title2)
+                        
+                })
+                
+                NavigationLink(destination: GroupView(), label: {
+                    Text("View group details")
+                        .padding(.top, 5)
+                        .font(.title2)
+                        
+                })
+                
+                Spacer()
+                
+            }
             
-            NavigationLink(destination: CreateGroup(), label: {
-                Text("View group details")
-                    .padding(.top, 5)
-                    .font(.title2)
-                    .offset(y: 250)
-            })
-            
-            Spacer()
-            
-        }
-        .padding(.all, 30)
+            .padding(.all, 30)
+        
     }
 }
 

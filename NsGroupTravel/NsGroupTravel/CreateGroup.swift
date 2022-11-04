@@ -15,9 +15,17 @@ struct CreateGroup: View {
         City(name: "Eindhoven", uicCode: "8400196"),
         City(name: "Groeningen", uicCode: ""),
         City(name: "Rotterdam", uicCode: "8400530"),
-        City(name: "The Hague", uicCode: ""),
+        City(name: "Maastricht", uicCode: ""),
         City(name: "Utrecht", uicCode: ""),
     ]
+    
+//    private let Cities: [City] = [
+//        City(name: "Amsterdam", fromStation:"Amsterdam", toStation:"Amsterdam"),
+//        City(name: "Eindhoven", fromStation:"Eindhoven", toStation:"Eindhoven"),
+//        City(name: "Groeningen", fromStation:"Groeningen", toStation:"Groeningen"),
+//        City(name: "Den Haag", fromStation:"Den Haag", toStation:"Den Haag"),
+//        City(name: "Utrecht", fromStation:"Utrecht", toStation:"Utrecht")
+//    ]
     
     private let Dates: [Day] = [
         Day(name: "04.11.2022"),
@@ -48,6 +56,13 @@ struct CreateGroup: View {
     @State private var isExpandedDummy = false
     @State private var selectedDestination = "Rotterdam"
     
+    
+//    private struct City: Identifiable, Codable {
+//        let name: String
+//        var id: String {name}
+//        var fromStation: String
+//        var toStation: String
+//    }
     
     private struct City: Identifiable, Codable {
         let name: String
@@ -85,7 +100,7 @@ struct CreateGroup: View {
         
         let dataTask = session.dataTask(with: request) {data, response, error in
             print("aia zic")
-            let destFunc = [String]()
+            
 
             if let error = error {
                 print(error.localizedDescription)
@@ -237,7 +252,7 @@ struct CreateGroup: View {
                                         .padding(.all)
                                         .onTapGesture {
                                             self.selectedCityA = Cities[num].name
-                                            print(self.fetchAPI(fromStation: selectedDeparture, toStation: selectedDestination, date: Date()))
+                                            print(self.fetchAPI(fromStation: selectedDeparture, toStation: selectedCityA, date: Date()))
                                             withAnimation {
                                                 self.isExpandedA.toggle()
                                             }
@@ -266,8 +281,9 @@ struct CreateGroup: View {
                                         .font(.title3)
                                         .padding(.all)
                                         .onTapGesture {
-                                            
+                                            print(self.fetchAPI(fromStation: selectedDeparture, toStation: selectedCityA, date: Date()))
                                             self.selectedCityD = Dates[num].name
+                                            
                                             withAnimation {
                                                 self.isExpandedD.toggle()
                                             }
