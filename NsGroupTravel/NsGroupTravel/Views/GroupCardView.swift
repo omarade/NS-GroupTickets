@@ -18,16 +18,9 @@ struct GroupCardView: View {
                 Text(group.createdBy["name"] ?? "")
             }
             .padding(.bottom, 5)
-//            HStack {
-//                Label("Date", systemImage: "")
-//                Spacer()
-//                Text(group.date)
-//            }
             
             HStack {
                 Label("Date & Time", systemImage: "calendar.badge.clock")
-                    //.foregroundColor(Color.red)
-//                Text(String(group.freeSpots))
                 Spacer()
                 Text(group.date)
             }
@@ -35,7 +28,6 @@ struct GroupCardView: View {
             Label("\(group.freeSpots) Spots Left", systemImage: "person.3")
                 .foregroundColor(Color.red)
                 .frame(maxWidth: .infinity)
-                //.border(.black)
         }
         .font(.system(size: 15))
         .padding()

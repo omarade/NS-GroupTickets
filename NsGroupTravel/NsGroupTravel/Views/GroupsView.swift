@@ -37,7 +37,7 @@ struct GroupsView: View {
                 .font(.system(size: 13))
             }
             
-            
+            //Filter groups
             Section(header: Text("Filter")) {
                 DatePicker(
                         "Date",
@@ -51,22 +51,17 @@ struct GroupsView: View {
             //Show List of Found Groups
             Section(header: Text("Groups Found").frame(alignment: .leading)) {
                 List  {
+                    
                     ForEach(groupsViewModel.groups) { group in
-                        NavigationLink (destination: GroupCardView(group: group)) {
+                        NavigationLink (destination: GroupDetailView(id: group.id)) {
                             GroupCardView(group: group)
                                 .frame(maxWidth: .infinity, maxHeight: 100)
                                 
                         }
                         .listRowInsets(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 10))
-                        
                     }
-
                 }
-                
             }
-//            .frame(maxWidth: .infinity, maxHeight: 150)
-            
-            
         }
         .navigationTitle("Groups")
         .navigationBarTitleDisplayMode(.large)

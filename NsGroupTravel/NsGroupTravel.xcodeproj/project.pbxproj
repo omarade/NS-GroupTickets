@@ -10,7 +10,7 @@
 		0740AB672912F0CC0000BC79 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB662912F0CC0000BC79 /* LandingView.swift */; };
 		0740AB692912F4390000BC79 /* GroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB682912F4390000BC79 /* GroupDetailView.swift */; };
 		0740AB6B291349930000BC79 /* GroupDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB6A291349930000BC79 /* GroupDetailsViewModel.swift */; };
-		07A8A80D2909AA5D0011638F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A80C2909AA5D0011638F /* User.swift */; };
+		0740AB6D291489140000BC79 /* GroupDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740AB6C291489140000BC79 /* GroupDto.swift */; };
 		07A8A80F2909AA800011638F /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A80E2909AA800011638F /* Group.swift */; };
 		07A8A8112909AA990011638F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8102909AA990011638F /* Route.swift */; };
 		07A8A8152909BCA50011638F /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A8142909BCA50011638F /* Member.swift */; };
@@ -20,7 +20,6 @@
 		07A8A827290DDB8F0011638F /* RoutesChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A826290DDB8F0011638F /* RoutesChoiceView.swift */; };
 		07A8A82B290F12910011638F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8A82A290F12910011638F /* ColorExtension.swift */; };
 		07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */; };
-		07E62D7529046B3000D18E11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E62D7429046B3000D18E11 /* ContentView.swift */; };
 		07E62D7729046B3100D18E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D7629046B3100D18E11 /* Assets.xcassets */; };
 		07E62D7A29046B3100D18E11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E62D7929046B3100D18E11 /* Preview Assets.xcassets */; };
 		07E62D822904740600D18E11 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 07E62D812904740600D18E11 /* FirebaseFirestore */; };
@@ -31,7 +30,7 @@
 		0740AB662912F0CC0000BC79 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		0740AB682912F4390000BC79 /* GroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailView.swift; sourceTree = "<group>"; };
 		0740AB6A291349930000BC79 /* GroupDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewModel.swift; sourceTree = "<group>"; };
-		07A8A80C2909AA5D0011638F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0740AB6C291489140000BC79 /* GroupDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDto.swift; sourceTree = "<group>"; };
 		07A8A80E2909AA800011638F /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		07A8A8102909AA990011638F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		07A8A8142909BCA50011638F /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
@@ -42,7 +41,6 @@
 		07A8A82A290F12910011638F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		07E62D6F29046B3000D18E11 /* NsGroupTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NsGroupTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NsGroupTravelApp.swift; sourceTree = "<group>"; };
-		07E62D7429046B3000D18E11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07E62D7629046B3100D18E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07E62D7929046B3100D18E11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		07E62D832904748000D18E11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -63,10 +61,10 @@
 		07A8A80B2909AA190011638F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				07A8A80C2909AA5D0011638F /* User.swift */,
 				07A8A80E2909AA800011638F /* Group.swift */,
 				07A8A8102909AA990011638F /* Route.swift */,
 				07A8A8142909BCA50011638F /* Member.swift */,
+				0740AB6C291489140000BC79 /* GroupDto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,7 +130,6 @@
 				07A8A8122909AE360011638F /* Views */,
 				07A8A80B2909AA190011638F /* Models */,
 				07E62D7229046B3000D18E11 /* NsGroupTravelApp.swift */,
-				07E62D7429046B3000D18E11 /* ContentView.swift */,
 				07E62D7629046B3100D18E11 /* Assets.xcassets */,
 				07E62D832904748000D18E11 /* GoogleService-Info.plist */,
 				07E62D7829046B3100D18E11 /* Preview Content */,
@@ -226,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0740AB672912F0CC0000BC79 /* LandingView.swift in Sources */,
-				07E62D7529046B3000D18E11 /* ContentView.swift in Sources */,
+				0740AB6D291489140000BC79 /* GroupDto.swift in Sources */,
 				07A8A8202909C3EC0011638F /* GroupsView.swift in Sources */,
 				0740AB6B291349930000BC79 /* GroupDetailsViewModel.swift in Sources */,
 				07A8A82B290F12910011638F /* ColorExtension.swift in Sources */,
@@ -234,7 +231,6 @@
 				07A8A8252909E9670011638F /* GroupsViewModel.swift in Sources */,
 				07A8A8152909BCA50011638F /* Member.swift in Sources */,
 				07E62D7329046B3000D18E11 /* NsGroupTravelApp.swift in Sources */,
-				07A8A80D2909AA5D0011638F /* User.swift in Sources */,
 				07A8A8112909AA990011638F /* Route.swift in Sources */,
 				07A8A80F2909AA800011638F /* Group.swift in Sources */,
 				0740AB692912F4390000BC79 /* GroupDetailView.swift in Sources */,

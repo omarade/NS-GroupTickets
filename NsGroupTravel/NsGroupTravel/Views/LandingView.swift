@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LandingView: View {
     @State private var startBtnClicked = false
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -37,6 +38,7 @@ struct LandingView: View {
                         }
                     }
                     .padding(.bottom, 30)
+                    
                     Button(action: {self.startBtnClicked.toggle()}) {
                         
                         Text("Get Started")
