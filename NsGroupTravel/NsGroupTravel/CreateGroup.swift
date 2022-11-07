@@ -118,44 +118,6 @@ struct CreateGroup: View {
                             }
                             print(availableTimes)
                             
-                            
-                            
-                            
-                            if let arr = jsonObject as? [String: Any] {
-                               
-                                if case let results as NSDictionary = arr["trips"] {
-                                    for (key, value) in results {
-                                        print(key)
-                                        if key as! String == "departures"{
-                                            if case let val as NSArray = value {
-                                                for i in val {
-                                                    if case let dest as NSDictionary = i {
-                                                        for (keyDest, valueDest) in dest {
-                                                            if keyDest as! String == "direction" {
-                                                                if valueDest as! String == toStation {
-                                                                    let time = dest["plannedDateTime"] as! String
-                                                                   print(time)
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            } else {
-                                                print("Error")
-                                            }
-                                            
-                                        }
-                                    }
-                                } else {
-                                    print("n-a mers")
-                                }
-                                print (times)
-                                DispatchQueue.main.async {
-//                                    let departures = arr["departures"] as! Any
-//                                    print(departures)
-                                }
-                            }
-                            
                         } catch {
                             print(error)
                         }
